@@ -2,7 +2,7 @@
 
 ---
 
-<img title="" src="file:///D:/git/sweetbrothers/asset/hg_diffuser.png" alt="Untitled" data-align="inline">
+<img title="" src="./asset/hg_diffuser.png" alt="Untitled" data-align="inline">
 
 # [스윗한 형제들] 기획안
 
@@ -22,7 +22,7 @@
   
   - Image to Image AI 모델과 MVP 데모 만들기
   
-  ![Untitled](D:\git\sweetbrothers\asset\mvp.png)
+  ![Untitled](.\asset\mvp.png)
 
 - 웹 I2I AI MVP 데모
   
@@ -63,7 +63,7 @@
 - DS는 Stable Diffusion을 통해 img2img 모델링 구축하는 경험 한다.
 - 여러 모델들을 Fine-tunning 경험 한다.
 
-![Untitled](D:\git\sweetbrothers\asset\architecture.png)
+![Untitled](.\asset\architecture.png)
 
 ---
 

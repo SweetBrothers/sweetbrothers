@@ -51,10 +51,17 @@ class Croper:
         # print(results[0].boxes)
         # render = render_result(model=model, image=image, result=results[0])
 
-        x,y,xx,yy = results[0].boxes[0].xyxy[0]
-        x,y,xx,yy = int(x),int(y),int(xx),int(yy)
-        m_x = x + int((xx-x)/2)
-        m_y = y + int((yy-y)/2)
+        try:
+          x,y,xx,yy = results[0].boxes[0].xyxy[0]
+          x,y,xx,yy = int(x),int(y),int(xx),int(yy)
+          m_x = x + int((xx-x)/2)
+          m_y = y + int((yy-y)/2)
+          self.suc = True
+        except:
+          print("fail!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!")
+          print(results)
+          self.suc = False
+          return 0
 
         bbw = xx- x
         bbh = yy-y
@@ -91,21 +98,22 @@ class Croper:
             verbose (int, optional): _description_. Defaults to 1.
         """
         self.getCordinate()
-        crop_img =  self.img[self.y_low:self.y_high,self.x_low:self.x_high]
-        if self.resize :
-            crop_img = cv2.resize(crop_img,dsize= (512,512))
-        if verbose == 1:
-            # in colab
-            cv2_imshow(crop_img)
-            print(self.save_path)
-            # in local
-            # cv2.imshow(self.img[self.y_low:self.y_high,self.x_low:self.x_high])
-        cv2.imwrite(f'{self.save_path}',crop_img)
+        if self.suc:
+            crop_img =  self.img[self.y_low:self.y_high,self.x_low:self.x_high]
+            if self.resize :
+                crop_img = cv2.resize(crop_img,dsize= (512,512))
+            if verbose == 1:
+                # in colab
+                cv2_imshow(crop_img)
+                print(self.save_path)
+                # in local
+                # cv2.imshow(self.img[self.y_low:self.y_high,self.x_low:self.x_high])
+            cv2.imwrite(f'{self.save_path}',crop_img)
 
 
 
 # 사용 예시
-# if __name__ == '__main__':
+if __name__ == '__main__':
     path = "/content/drive/MyDrive/YearDream/img_Data/2.newjeans_data/danielle"
     names = os.listdir(path)
     for name in names :

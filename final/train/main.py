@@ -85,17 +85,17 @@ def generate_image():
         user_code = encode_image_from_base64("input_img/1")
         pose_number = params["pose"]
         pose_code = encode_image_from_base64(f"pose/{pose_number}")
-        negative_prompt = "(low quality:1.5), (worst quality:1.5),nsfw,painting,sketches,normal quality,lowres,monochrome,grayscale,acnes,skin spots,age spot,skin blemishes,bad feet,wrong feet,wrong shoe,bad hands,distorted,missing fingers , watermark,lowers,ugly,duplicate,badhandv4,multiple feet,bad knees,extra fingers,mutilated,mutation, bad anatomy,cloned face, moles, editing, nude, nipples, mutation, extra arms, missing arms, malformed, disfigured,cloned face, epiCNegative, negative_hand-neg, ng_deepnegative_v1_75t, easynegative, FastNegativeV2"
+        negative_prompt = ""
         model = "majicmixRealistic_v7.safetensors"
         vae = "vae-ft-mse-840000-ema-pruned.ckpt"
         sampler_name = "Euler a"         #"Euler a"    #"Euler"    #"DPM++ 2M Karras"  #"DPM++ SDE Karras"
         steps = 40
         cfg = 5
-        prompt = f"(blurry background:1.3), (white background:1.2), korean, (best quality:1.5), (masterpiece:1.3), ultra high res, (photorealistic:1.4),intricate details, 1girl,  saturated color palette, (film grain:1.1),  In the style of award-winning photography, high contrasts, centered composition, portrait, front, studio photo, 8k, 64k, scornful, casual wear, upper body, <lora:{user_id}:0.9>, <lora:add_detail:1>, <lora:Better Portrait Lighting:0.6>, <lora:FilmVelvia3:0.6>, <lora:polyhedron_new_skin_v1.1:0.1>"
+        prompt = f""
         # cool tone
-        prompt_cool = f"(blurry background:1.3), (white background:1.2), korean, (best quality:1.5), (masterpiece:1.3), ultra high res, (photorealistic:1.4),intricate details, 1girl,  saturated color palette, (film grain:1.1),  In the style of award-winning photography, high contrasts, centered composition, portrait, front, studio photo, 8k, 64k, scornful, casual wear, upper body, <lora:{user_id}:0.9>, <lora:add_detail:1>, <lora:Better Portrait Lighting:0.6>, <lora:FilmVelvia3:0.6>, <lora:polyhedron_new_skin_v1.1:0.1>, <lora:冷调_Cool tones:0.5>"
+        prompt_cool = f""
         # warm tone
-        prompt_warm = f"(blurry background:1.3), (white background:1.2), korean, (best quality:1.5), (masterpiece:1.3), ultra high res, (photorealistic:1.4),intricate details, 1girl,  saturated color palette, (film grain:1.1),  In the style of award-winning photography, high contrasts, centered composition, portrait, front, studio photo, 8k, 64k, scornful, casual wear, upper body, <lora:{user_id}:0.9>, <lora:add_detail:1>, <lora:Better Portrait Lighting:0.6>, <lora:FilmVelvia3:0.6>, <lora:polyhedron_new_skin_v1.1:0.1>, <lora:暖调_warm colour (arch.)W:0.5>"
+        prompt_warm = f""
 
         if params["tone"] == "cool":
                 prompt = prompt_cool
@@ -215,20 +215,11 @@ def generate_image():
             }
         }
         t2i_payload.update(override_payload)
-        # response = requests.post(url=f'{url}/sdapi/v1/txt2img', json=t2i_payload)
-        # r = response.json()
-        # print(response)
-        # image = Image.open(io.BytesIO(base64.b64decode(r['images'][0])))
-        # image.save('base.png')
         request_save("txt2img", t2i_payload, "base")      
 
 
         # i2i
-        # base_code = encode_image_from_base64("base")
-        base = './outputs/base.png'
-        img = cv2.imread(base)
-        _, bytes = cv2.imencode('.png', img)
-        base_code = base64.b64encode(bytes).decode('utf-8')
+        base_code = encode_image_from_base64("base")
         i2i_payload = {          
             "init_images" : [
                 base_code
@@ -248,19 +239,9 @@ def generate_image():
             }
         }
         i2i_payload.update(override_payload)
-        # response = requests.post(url=f'{url}/sdapi/v1/img2img', json=i2i_payload)
-        # r = response.json()
-        # image = Image.open(io.BytesIO(base64.b64decode(r['images'][0])))
-        # image.save('base_upscale.png')
         request_save("img2img", i2i_payload, "base_upscale")
         
         base_upscale = encode_image_from_base64("base_upscale","outputs")
-        # base_upscale_ = './base_upscale.png'
-        # img = cv2.imread(base_upscale_)
-        # retval, bytes = cv2.imencode('.png', img)
-        # base_upscale = base64.b64encode(bytes).decode('utf-8')
-
-
         upscale_ControlNet =[
             {
                 "input_image" : base_upscale, # pose img encode

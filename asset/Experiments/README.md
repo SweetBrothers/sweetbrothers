@@ -1,0 +1,1 @@
+this file contains result files of LoRA, EasyPhoto,Pose, Prompt, etc..

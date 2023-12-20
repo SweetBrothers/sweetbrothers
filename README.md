@@ -196,6 +196,11 @@ user 의 img를 받아 Image Generation 과정은 아래와 같습니다.
 
 ## T2I
 **1. LoRA**
+
+
+
+
+
 <p align="center"><img src="./asset/algorithm/1.lora_structure.png" alt="lora"/></p>
 최근 chatGPT 열풍에 이어 LLM에 대한 인기가 매우 뜨겁습니다.
 하지만, 여기서 문제점으로 언급된 것이 model을 fine-tuning할 때 모델의 파라미터가 너무 많다보니 리소스 제약이 크다는 점이였다.
@@ -209,6 +214,7 @@ LoRA는 행렬을 랭크가 낮은(low-rank) 두 개의  행렬로 분해하�
 어떤 모델이 1000개의 행과 2000개의 열로 구성된 행렬을 가지고 있다고 가정하겠습니다. 그러면 그 모델 파일에는 2백만 (1000x2000)개의 숫자가 저장됩니다. LoRA는 이 행렬을 1000x2 행렬과 2x2000 행렬로 쪼갭니다. 이렇게 하면 총 6천개(1000x2 + 2x2000)의 숫자만 필요하고, 따라서 원래의 행렬에 비해 1/333 으로 줄어듭니다.이 때문에 LoRA 파일의 크기가 훨씬 작은 것입니다.
 
 **2. EasyPhoto**
+
 <img src="./asset/algorithm/10.easyphoto와%20sd%20소개2.jpg" alt="easy" style="zoom: 20%;" />|<img src="./asset/algorithm/12.easyphoto_training.png" alt="easy" style="zoom: 60%;" />
 
 논문의 저자는 Gradio 라이브러리를 기반으로 구축된 브라우저 인터페이스를 갖추고 있어 Stable Diffusion 모델을 위한 대화형 및 사용자 친화적인 인터페이스를 제공합니다.
@@ -235,6 +241,7 @@ LoRA는 행렬을 랭크가 낮은(low-rank) 두 개의  행렬로 분해하�
 결과적으로 LoRA 모델이 학습하는 얼굴 특징은 템플릿 생성 결과 간의 유사성을 향상시키는 개선을 보여주고 템플릿 전반에 걸친 일반화도 보여줍니다. 
 
 **3. Dreambooth**
+
 ![dream](./asset/algorithm/6.dreambooth_개요.png)
 Dreambooth는 구글 연구진이 발표한 논문입니다. 
 사용된 학습 방법의 이름으로 Imagen이라는 text-to-image 생성 모델을 어떤 subject에 대한 몇 장의 사진으로 Fine-tuning 하여  개인화된 text-to-image 생성 모델을 만들고 해당 <u>subject를 새로운 context에서 높은 fidelity로 이미지를 생성할 수 있게 해주는 학습 방법입니다.</u>
@@ -254,8 +261,10 @@ Dreambooth는 class image(Regularization image, 정규화 이미지)를 통하�
 
 ## I2I
 **1. Adetailer**
+
 After Detailer란?
 Stable Diffusion 사용시 얼굴 뭉개짐을 방지할 수 있는 확장 기능 입니다.
+
 <p align="center"><img src="./asset/algorithm/4.%20모델%20예시.png" alt="ad" style="zoom: 33%;" />|<img src="./asset/algorithm/4.%20모델%20예시2.png" alt="ad" style="zoom: 33%;" /></p>
 
 1. 이미지 detection을 통해 부분을 인식합니다.
@@ -266,19 +275,23 @@ Stable Diffusion 사용시 얼굴 뭉개짐을 방지할 수 있는 확장 기�
 	반면 After Detailer의 경우, 이미지에 포함된 얼굴/손 등을 감지한 후, 확대하여 인페인트를 실시하고 다시 원래의 이미지 축척에 맞게 줄이는 방식으로 작동됩니다.
 
 **2. ControlNet**
+
 논문 이름: Adding Conditional Control to Text-to-Image Diffusion Models (ControlNet)
 ControlNet은 Stable Diffusion 모델 을 제어하기 위한 신경망 모델로서, 단독으로는 사용할 수 없고, 다른 Stable Diffusion 모델과 함께 사용해야 합니다. 
 Stable Diffusion에서 가장 기본적인 형태는 text-to-image, 즉 텍스트 프롬프트(prompt)를 조건부여(conditioning)로서 입력하면, 이를 바탕으로 이미지를 생성하는 것입니다. ControlNet은 조건부여를 하나 더 추가합니다. ControlNet에도 매우 많은 종류 존재하지만, 저희는 Openpose 와 tile_resample만을 이용했습니다.
 인체의 자세를 감지하는 모델로는 Openpose 가 있습니다. 이 모델은 손, 발, 머리 등의 위치와 같은 인간의 자세를 추출하는 빠른 키포인트(keypoint) 감지 모델입니다.
+
 <p align="center"><img src="./asset/algorithm/0.컨트롤넷%20예시%202.png" alt="컨트롤"></p>
 <p align="center"><img src="./asset/algorithm/1.%20컨트롤넷%20작업흐름.png" alt="컨트롤" style="zoom: 67%;" /></p>
 
 위의 사진은 Openpose를 이용한 ControlNet 작업흐름입니다. Openpose는 입력된 이미지로 부터 키포인트를 추출하고, 이 키포인트의 위치를 포함하는 제어 맵(control map)으로 저정합니다. 이 제어 맵이 Stable Diffusion에 전달되어 텍스트 프롬프트와 함께 추가적인 조건부여로 사용됩니다. 이미지는 이처럼 두가지 조건부여에 기초하여 생성됩니다.
 ControlNet은 학습 가능한 네트워크 모듈을 Stable Diffusion 모델의 핵심인 U-Net(잡음 예측기)의 여기 저기에 부착하는 방식으로 작동합니다. Stabel Diffusion 모델의 가중치는 훈련중 변경되지 않도록 고정됩니다. 학습 중에는 오직 부착된 모듈만 수정됩니다.
 
-![컨트롤](./asset/algorithm/2.컨트롤%20넷%20모델%20작동%20원리.png)
+<p align="center"><img src="./asset/algorithm/2.컨트롤%20넷%20모델%20작동%20원리.png" alt="컨트롤"/></p>
+
 ControlNet은 zero-convolution
 먼저, 부착된 네트워크 모듈의 가중치는 모두 0이므로, 새 모델은 학습되어 잠긴 모델을 활용할 수 있습니다.
+
 1. 첫번째는 텍스트 프롬프트, 
 2. 두번째는 Openpose 키포인트나 Canny외곽선과 같은 전처리 자료입니다. 
 이런 방식으로 이들 두 가지 입력에 기초한 이미지를 생성하도록 학습할 수 있습니다. 이때, 각각의 전처리별 방법은 독립적으로 학습받게 됩니다.

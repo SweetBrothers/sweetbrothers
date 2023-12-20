@@ -16,7 +16,7 @@
   
 
 ### 팀원: 강동훈(DS), 지주영(DS), 박사무엘(DS), 정양섭(DE), 남궁맑음(DE), 김아진(DE)
-![강동훈](https://github.com/proportionequation) ![지주영](https://github.com/Zivil97) ![박사무엘](https://github.com/ahfmrptEkd) ![김아진](https://github.com/ajinGeem) ![남궁맑음](https://github.com/MARKZZAM) ![정양섭](https://github.com/Jung110)
+[강동훈](https://github.com/proportionequation) [지주영](https://github.com/Zivil97) [박사무엘](https://github.com/ahfmrptEkd) [김아진](https://github.com/ajinGeem) [남궁맑음](https://github.com/MARKZZAM) [정양섭](https://github.com/Jung110)
 
 ---
 

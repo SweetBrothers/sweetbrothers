@@ -1,5 +1,10 @@
 This folder contains EasyPhoto_training log and weights.
 
+
+- for a Training
+please check out Google drive link and "Training"
+"https://drive.google.com/drive/folders/1UK8Vdh2HpYevFlsbjBPi7Y6sWVScqEyk?usp=sharing"
+
 ```
 Folder Hierarchy:
     - user_id_folder/

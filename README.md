@@ -300,7 +300,7 @@ z_{t−1}를 예측하는 것과 같다. 회색으로 된 neural network는 원�
 
 **3. DwPose**
 <p align="center"><img src="./asset/algorithm/9.dwpose_논문%20intro3%20모델%20비교.png" alt="dw" style="zoom: 67%;" /></p>
-![dw](./asset/algorithm/10.dwpose_method.png)
+<p align="center"><img src="./asset/algorithm/10.dwpose_method.png" alt="dw" style="zoom: 80%;" /></p>
 RTMPose를 뛰어넘는 논문 : Effective Whole-body Pose Estimation with Two-stages Distillation
 
 DWPose의 Method로는 

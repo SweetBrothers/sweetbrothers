@@ -386,9 +386,9 @@ python main.py
 - **IU**
 
 <p align="center">
-	<img src="./asset/media/Untitled%2013.png" alt="one" width="33%" height="33%" />
-	<img src="./asset/media/Untitled%2014.png" alt="two" width="33%" height="33%" />
-	<img src="./asset/media/Untitled%2015.png" alt="three" width="33%" height="33%" />
+	<img src="./asset/media/Untitled%2013.png" alt="one" width="28%" height="28%" />
+	<img src="./asset/media/Untitled%2014.png" alt="two" width="28%" height="28%" />
+	<img src="./asset/media/Untitled%2015.png" alt="three" width="28%" height="28%" />
 	<figcaption align="center">3개 이미지 띄우기</figcaption>
 </p>
 
@@ -397,9 +397,9 @@ python main.py
 - **카리나 (Aespa)**
 
 <p align="center">
-	<img src="./asset/media/Untitled%2018.png" alt="one" width="33%" height="33%" />
-	<img src="./asset/media/Untitled%2016.png" alt="two" width="33%" height="33%" />
-	<img src="./asset/media/Untitled%2017.png" alt="three" width="33%" height="33%" />
+	<img src="./asset/media/Untitled%2018.png" alt="one" width="28%" height="28%" />
+	<img src="./asset/media/Untitled%2016.png" alt="two" width="28%" height="28%" />
+	<img src="./asset/media/Untitled%2017.png" alt="three" width="28%" height="28%" />
 	<figcaption align="center">3개 이미지 띄우기</figcaption>
 </p>
 

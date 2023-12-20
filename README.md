@@ -374,9 +374,9 @@ python main.py
 
 - **장원영 (아이브)**
 <p align="center">
-	<img src="./asset/media/Untitled%2010.png" alt="one" width="33%" height="33%" />
-	<img src="./asset/media/Untitled%2011.png" alt="two" width="33%" height="33%" />
-	<img src="./asset/media/Untitled%2012.png" alt="three" width="33%" height="33%" />
+	<img src="./asset/media/Untitled%2010.png" alt="one" width="28%" height="28%" />
+	<img src="./asset/media/Untitled%2011.png" alt="two" width="28%" height="28%" />
+	<img src="./asset/media/Untitled%2012.png" alt="three" width="28%" height="28%" />
  	<figcaption align="center">3개 이미지 띄우기</figcaption>
 </p>
 

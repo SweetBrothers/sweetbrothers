@@ -367,7 +367,7 @@ python main.py
 6. 아이디:admin 비번:admin을 입력하면 아래의 사진과 같이 나옴
 7. 이미지를 전부 넣고 option값을 원하는 대로 수정한다. 그 후 generate 버튼을 누르면 이미지가 result 탭에 생성된다.
 ```
-<img title="" src="./Final/asset/img/main.jpg" alt="Untitled" data-align="inline">
+<img title="" src="./final/asset/img/main.jpg" alt="Untitled" data-align="inline">
 
 
 ## Output

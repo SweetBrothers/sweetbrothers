@@ -21,8 +21,7 @@
 
 - 2023년 이어드림스쿨3기에서 진행된 기업연계 프로젝트입니다.
 
-- Stable Diffusion을 통해 User의 Image를 이용하여 개인화 된 AI 스튜디오 프로필 사진을 만드는 프로젝트입니다.
-
+- Stable Diffusion을 통해 User의 Image를 학습한 후, 개인화를 덧불어 사진의 포즈와 색감을 더한 AI 스튜디오 프로필 사진을 만드는 프로젝트입니다.
   
 
 ### 팀원: 강동훈(DS), 지주영(DS), 박사무엘(DS), 정양섭(DE), 남궁맑음(DE), 김아진(DE)
@@ -34,20 +33,7 @@
 
 ### 문제 정의
 
-- MVP 란?
-    - 최소 기능 제품으로써 데모버전을 통해 구현 가능성과 대중의 관심도를 확인할 수 있는 시제품을 의미한다.
-    
-    <img src="./asset/media/Untitled.png" alt="Untitled" style="zoom: 80%;" />
----
-
-
-### 문제 해결의 필요성
-
 <p align="center"><img src="./asset/media/Untitled%202.png" alt="untitled" width="80%" height="80%" /></p>
-
-<p align="center"><img src="./asset/media/Untitled%203.png" alt="Untitled" width="80%" height="80%" /></p>
-
-<p align="center"><img src="./asset/media/Untitled%204.png" alt="Untitled" width="80%" height="80%" /></p>
 
 <img src="./asset/media/Untitled%205.png" alt="Untitled" style="zoom:50%;" />
 

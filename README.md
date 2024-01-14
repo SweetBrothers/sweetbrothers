@@ -9,9 +9,19 @@
 
 ## **[DE+DS] Stable Diffusion 기반 I2I 서비스 MVP 개발**
 
+![video](./asset/media/video.gif)
+
+- **장원영 (아이브)**
+<p align="center">
+	<img src="./asset/media/Untitled%2010.png" alt="one" width="28%" height="28%" />
+	<img src="./asset/media/Untitled%2011.png" alt="two" width="28%" height="28%" />
+	<img src="./asset/media/Untitled%2012.png" alt="three" width="28%" height="28%" />
+ 	<figcaption align="center"></figcaption>
+</p>
+
 - 2023년 이어드림스쿨3기에서 진행된 기업연계 프로젝트입니다.
 
-- 연계기업으로부터 Stable Diffusion에 대한 주제를 받아 프로젝트를 진행하였습니다.
+- Stable Diffusion을 통해 User의 Image를 이용하여 개인화 된 AI 스튜디오 프로필 사진을 만드는 프로젝트입니다.
 
   
 
@@ -334,8 +344,7 @@ two-stage pose distillation(TPD)를 제안했습니다.
 ---
 # Outputs
 
-### MVP 
-![video](./asset/media/video.gif)
+
 
 
 
@@ -372,24 +381,13 @@ python main.py
 
 ## Output
 
-- **장원영 (아이브)**
-<p align="center">
-	<img src="./asset/media/Untitled%2010.png" alt="one" width="28%" height="28%" />
-	<img src="./asset/media/Untitled%2011.png" alt="two" width="28%" height="28%" />
-	<img src="./asset/media/Untitled%2012.png" alt="three" width="28%" height="28%" />
- 	<figcaption align="center">3개 이미지 띄우기</figcaption>
-</p>
-
-
-
-
 - **IU**
 
 <p align="center">
 	<img src="./asset/media/Untitled%2013.png" alt="one" width="28%" height="28%" />
 	<img src="./asset/media/Untitled%2014.png" alt="two" width="28%" height="28%" />
 	<img src="./asset/media/Untitled%2015.png" alt="three" width="28%" height="28%" />
-	<figcaption align="center">3개 이미지 띄우기</figcaption>
+	<figcaption align="center"></figcaption>
 </p>
 
 
@@ -400,7 +398,7 @@ python main.py
 	<img src="./asset/media/Untitled%2018.png" alt="one" width="28%" height="28%" />
 	<img src="./asset/media/Untitled%2016.png" alt="two" width="28%" height="28%" />
 	<img src="./asset/media/Untitled%2017.png" alt="three" width="28%" height="28%" />
-	<figcaption align="center">3개 이미지 띄우기</figcaption>
+	<figcaption align="center"></figcaption>
 </p>
 
 ---

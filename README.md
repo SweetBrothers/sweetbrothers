@@ -28,6 +28,25 @@
 [강동훈](https://github.com/proportionequation) [지주영](https://github.com/Zivil97) [박사무엘](https://github.com/ahfmrptEkd) [김아진](https://github.com/ajinGeem) [남궁맑음](https://github.com/MARKZZAM) [정양섭](https://github.com/Jung110)
 
 ---
+# 목차
+- [Overview](#overview)
+    + [문제 정의](#-----)
+  * [데이터](#---)
+    + [평가](#--)
+- [개발 계획](#개발-계획)
+    + [AI 모델 및 방법](#ai--------)
+    + [개발 일정](#-----)
+    + [파이프라인 구조](#--------)
+    + [데이터 파이프라인 구축](#------------)
+- [Generation Process](#generation-process)
+- [Algorithms Summary](#algorithms-summary)
+  * [T2I]
+  * [I2I]
+- [Outputs](#outputs)
+  * [🎮 Getting Started]
+  * [Output]
+  * [Credit]
+---
 
 # Overview
 
@@ -59,20 +78,6 @@
 
 <img src="./asset/media/Untitled%201.png" alt="Untitled" style="zoom: 67%;" />
 
-
-
-### 문제 해결의 필요성 - DE & DS
-
-문제를 해결하기 위한 과정들로는
-
-- 서비스를 띄울 WEB server 구축
-- Pipe-line  구축
-    - 전체적인 Inference 과정을 위한 데이터의 원할한 flow 연결.
-        - 모델의 생산성 과 성능을 향상 시키는게 목적
-- 좋은 방향으로 유도하는 모델의 Prompt
-    - 우리가 원하는 방향으로 유도 하기 위해서는 올바른 방향의 prompt가 필요.
-- 모델 개발을 위한 API 연동과 개발이 필요.
-
 ---
 
 
@@ -82,11 +87,11 @@
 - 저희는 유명한 아이돌과 연예인들의 사진들을 이용하였습니다.
 - 연예인들의 얼굴을 널리 알려졌기에, 저희가 연예인 얼굴의 유사도를 통해 모델의 성능을 측정하기에 용이하다고 판단하였습니다.
   
-    ### 평가
+### 평가
     
-    정성적인 평가를 통해 모델의 성능을 측정했습니다. 
+정성적인 평가를 통해 모델의 성능을 측정했습니다. 
     
-    - 여러 연예인 사진을 통해 좋은 성능의 prompt, 모델, 파라미터를 측정했습니다.
+- 여러 연예인 사진을 통해 좋은 성능의 prompt, 모델, 파라미터를 측정했습니다.
 
 ![Untitled](./asset/media/Untitled%207.png)
 
@@ -169,7 +174,7 @@ I2I의 output img를 그대로 base 기반으로 두고, **denoise를 아주 낮
             - user 에게 보이는 Front 을 담당
 ---
 
-# 과정
+# Generation Process
 user 의 img를 받아 Image Generation 과정은 아래와 같습니다.
 
 - Gradio를 Flask API를 이용해 Stdable Diffusion Web Ui 와 연동하여 프로세스한다.

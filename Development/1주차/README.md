@@ -21,7 +21,7 @@ Ultralytics YOLOv8.0.43 🚀 Python-3.10.12 torch-2.1.0+cu118 CPU
 ====================================================================================================
 Model summary (fused): 168 layers, 3005843 parameters, 0 gradients, 8.1 GFLOPs
 
-![result](image.png)
+![result](Development/1주차/Yolo_Crop/image.png)
 
 /content/drive/MyDrive/YearDream/img_Data/2. newjeans_data/danielle/result/danielle_(14).jpg
 
